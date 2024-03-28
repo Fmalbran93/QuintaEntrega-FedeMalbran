@@ -54,16 +54,16 @@ io.on('connection', socket => {
 });
 
 // Routes
-app.use('/static', express.static(path.join(__dirname, '/public')));
+app.use('/', express.static(path.join(__dirname, '/public')));
 
-app.get('/static', (req, res) => {
-	res.render('index', {
+app.get('/', (req, res) => {
+	res.render('home', {
 		rutaCSS: 'index',
 		rutaJS: 'index',
 	});
 });
 
-app.get('/static/realtimeproducts', (req, res) => {
+app.get('/realtimeproducts', (req, res) => {
 	res.render('realTimeProducts', {
 		rutaCSS: 'realTimeProducts',
 		rutaJS: 'realTimeProducts',
@@ -75,7 +75,7 @@ app.get('/static/realtimeproducts', (req, res) => {
 app.use('/api/products', routerProd);
 app.use('/api/carts', routerCart);
 
-app.use('/static', express.static(path.join(__dirname, '/public')));
+app.use('/', express.static(path.join(__dirname, '/public')));
 app.get('*', (req, res) => {
     res.status(404).send('Error 404');
 });

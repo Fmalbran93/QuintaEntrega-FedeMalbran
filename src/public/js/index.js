@@ -10,7 +10,7 @@ function deleteProduct(productId) {
 }
 socket.on('products', products => {
 	if (products.length === 0) {
-		productsContainer.innerHTML = '<h3> No hay productos agregados al momento, ve a <a href="/static/realtimeproducts">/static/realtimeproducts</a> para agregarlos!.</h3>';
+		productsContainer.innerHTML = '<h3> No hay productos agregados al momento, ve a <a href="/realtimeproducts">/realtimeproducts</a> para agregarlos!.</h3>';
 	} else {
 		productsContainer.innerHTML = '';
 		products.forEach(prod => {
@@ -33,5 +33,5 @@ socket.on('products', products => {
 
 	// Agregue el evento al botón de redirección a realtimeprods
   goToRealTimeProds.addEventListener('click', () => {
-    window.location.href = '/static/realtimeproducts';
+    window.location.href = '/realtimeproducts';
   });

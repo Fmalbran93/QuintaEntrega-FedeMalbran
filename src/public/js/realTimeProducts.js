@@ -44,7 +44,7 @@
 
 	// Agregue el evento al botón de redirección a static
 goToStaticButton.addEventListener('click', () => {
-	window.location.href = '/static';
+	window.location.href = '/';
 });
 
 // Agregue evento para eliminar un producto
